@@ -3,7 +3,14 @@ using namespace std;
 
 class Solution {
 public:
+        void swap(vector <int> &nums, int i, int j){
 
+        int temp= nums[i];
+        nums[i]=nums[j];
+        nums[j]=temp;
+
+        return;
+    }
 
     vector<int> selectionSort(vector<int>& nums) {
 

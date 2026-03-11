@@ -15,7 +15,6 @@ int pattern7(int n){
     return 0;
 }
 
-
 int pattern8(int n){
     for(int i=0; i<n; i++){
         for(int j=0;j<i; j++){
@@ -31,7 +30,6 @@ int pattern8(int n){
     return 0;
 }
 
-
 int pattern9(int n){
     pattern7(n);
     pattern8(n);
@@ -39,7 +37,6 @@ int pattern9(int n){
 
     return 0;
 }
-
 
 int pattern12(int n){
     for(int i=1; i<=n; i++){
@@ -57,7 +54,6 @@ int pattern12(int n){
 
     return 0;
 }
-
 
 int pattern22(int n){
     for(int i=n; i>0; i--){
@@ -89,7 +85,6 @@ int pattern22(int n){
         cout<<endl;
     }
 }
-
 
 int main(){
     pattern22(5);
