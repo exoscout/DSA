@@ -2,7 +2,7 @@
 using namespace std;
 
 class Solution {
-public:
+    public:
         void swap(vector <int> &nums, int i, int j){
 
         int temp= nums[i];
@@ -12,23 +12,23 @@ public:
         return;
     }
 
-    vector<int> selectionSort(vector<int>& nums) {
+        vector<int> selectionSort(vector<int>& nums) {
 
-        int i=0, n=nums.size();
-        while(i<n-1){
-            int j=i;
-            int minNum=nums[i], idx=i;
-            while(j<n){
-                if(minNum>nums[j]){
-                    idx=j;
-                    minNum=nums[j];
+            int i=0, n=nums.size();
+            while(i<n-1){
+                int j=i;
+                int minNum=nums[i], idx=i;
+                while(j<n){
+                    if(minNum>nums[j]){
+                        idx=j;
+                        minNum=nums[j];
+                    }
+                    j++;
                 }
-                j++;
+                swap(nums, i,idx);
+                i++;
             }
-            swap(nums, i,idx);
-            i++;
-        }
-        return nums;
+            return nums;
     }
 
         vector<int> bubbleSort(vector<int> & nums){
@@ -62,7 +62,41 @@ public:
         return nums;
     }
 
+        int partition(vector<int> &nums, int begin, int end){
 
+    int pivot = nums[begin];
+    int i = begin + 1;
+    int j = end;
+
+    while(true){
+
+            while(i <= end && nums[i] <= pivot)
+                i++;
+
+            while(nums[j] > pivot)
+               j--;
+
+            if(i >= j)
+                break;
+
+            swap(nums[i], nums[j]);
+        }
+
+        swap(nums[begin], nums[j]);
+
+        return j;
+    }   
+    
+        void quickSort(vector<int> &nums, int begin, int end){
+
+        if(begin >= end)
+            return;
+
+        int p = partition(nums, begin, end);
+
+        quickSort(nums, begin, p - 1);
+        quickSort(nums, p + 1, end);
+    }
 
 
 };
