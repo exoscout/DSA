@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+
+
+    vector<int> selectionSort(vector<int>& nums) {
+
+        int i=0, n=nums.size();
+        while(i<n-1){
+            int j=i;
+            int minNum=nums[i], idx=i;
+            while(j<n){
+                if(minNum>nums[j]){
+                    idx=j;
+                    minNum=nums[j];
+                }
+                j++;
+            }
+            swap(nums, i,idx);
+            i++;
+        }
+        return nums;
+    }
+
+
+};
+
+int main(){
+    vector <int> nums={1,2,3,65,32,19,9,7,4,1};
+    Solution solution;
+    solution.bubbleSort(nums);
+
+    for(auto x : nums){
+        cout << x << " ";
+    }
+}
