@@ -47,6 +47,21 @@ public:
         return nums;
     }
 
+        vector<int> insertionSort(vector<int> &nums){
+        int n=nums.size();
+        int p1=1;
+        while(p1<n){
+            int p2=p1+1;
+            while(p2>0 && nums[p2]<nums[p2-1]){
+                swap(nums, p2, p2-1);
+                p2--;
+            }
+            p1++;
+        }
+
+        return nums;
+    }
+
 
 
 
