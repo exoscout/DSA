@@ -31,6 +31,24 @@ public:
         return nums;
     }
 
+        vector<int> bubbleSort(vector<int> & nums){
+        int n=nums.size();
+        int i=n-1;
+        while(i>0){
+            int j=0, k=1;
+            while(k<=i){
+                if(nums[j]>nums[k]) swap(nums, j,k);
+                j++;
+                k++;
+            }
+            i--;
+        }
+
+        return nums;
+    }
+
+
+
 
 };
 
